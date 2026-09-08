@@ -1,10 +1,10 @@
 @import 'tailwindcss';
 
 :root {
-  --ivory: #fbf5e8;
-  --paper: #fffaf0;
-  --ink: #211713;
-  --muted: #6f6259;
+  --ivory: #f4f7f6;
+  --paper: #ffffff;
+  --ink: #192c29;
+  --muted: #596c67;
   --maroon: #5b1f1b;
   --terracotta: #a94f28;
   --gold: #c8943c;
@@ -37,9 +37,7 @@ body::before {
   z-index: -1;
   pointer-events: none;
   content: "";
-  background:
-    radial-gradient(circle at 18% 12%, rgba(200, 148, 60, 0.12), transparent 28rem),
-    linear-gradient(135deg, rgba(36, 85, 59, 0.08), transparent 36rem);
+  background: none;
 }
 
 a {
@@ -1267,6 +1265,124 @@ textarea {
   .utility-actions > * {
     overflow-wrap: anywhere;
   }
+}
+
+/* Shared glass surfaces keep reflections consistent across controls. */
+.button,
+.menu-toggle,
+.icon-button,
+.download-list button,
+.info-list button {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: 999px;
+  background: linear-gradient(155deg, rgba(255, 255, 255, 0.92), rgba(222, 237, 232, 0.72));
+  color: var(--ink);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.95), inset 0 -1px 1px rgba(40, 72, 65, 0.12), 0 5px 16px rgba(27, 62, 52, 0.1);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  backdrop-filter: blur(18px) saturate(160%);
+  transition: transform 220ms ease, box-shadow 220ms ease, background 220ms ease;
+  cursor: pointer;
+}
+
+.button::before,
+.download-list button::before {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: linear-gradient(115deg, transparent 15%, rgba(255, 255, 255, 0.28) 42%, transparent 67%);
+  transform: translateX(-110%);
+  transition: transform 600ms ease;
+  pointer-events: none;
+  content: "";
+}
+
+.button:hover::before,
+.download-list button:hover::before {
+  transform: translateX(110%);
+}
+
+.button { padding-inline: 1.5rem; font-weight: 750; }
+.button.primary { background: linear-gradient(155deg, rgba(128, 64, 71, 0.95), rgba(80, 30, 41, 0.94)); color: white; border-color: rgba(255, 255, 255, 0.38); }
+.button.primary.green { background: linear-gradient(155deg, rgba(45, 112, 89, 0.95), rgba(22, 71, 57, 0.94)); }
+.button.light { background: linear-gradient(155deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.65)); color: #233e35; }
+.button.ghost { background: linear-gradient(155deg, rgba(255, 255, 255, 0.22), rgba(13, 30, 27, 0.65)); color: white; }
+.button:hover,
+.download-list button:hover { transform: translateY(-3px); box-shadow: inset 0 1px 0 white, 0 10px 25px rgba(24, 59, 48, 0.2); }
+.button:active,
+.download-list button:active { transform: translateY(0) scale(0.98); }
+.info-list button { padding: 0.6rem 1rem; }
+.download-list button { border-radius: 20px; }
+.utility-bar button,
+.utility-bar a { border-radius: 999px; }
+.site-header { border-radius: 0 0 26px 26px; }
+.site-header.scrolled,
+.site-header:focus-within { background: rgba(246, 251, 249, 0.92); border-bottom: 1px solid rgba(255, 255, 255, 0.8); }
+.brand .placeholder,
+.footer .placeholder { border-radius: 16px; }
+.hero { min-height: 720px; border-radius: 0 0 56px 56px; }
+.hero h1 { font-size: 5.5rem; line-height: 1.02; }
+.hero-shade { background: linear-gradient(90deg, rgba(13, 32, 27, 0.78), rgba(13, 32, 27, 0.35) 50%, rgba(13, 32, 27, 0.03)); }
+.mist { display: none; }
+.eyebrow { letter-spacing: 0; }
+.quick-actions { border-radius: 28px; background: rgba(255, 255, 255, 0.65); border-color: white; backdrop-filter: blur(22px); box-shadow: 0 16px 45px rgba(24, 59, 48, 0.12); }
+.quick-actions a { background: rgba(255, 255, 255, 0.82); transition: background 200ms ease; }
+.quick-actions a:hover { background: #e6f2ed; }
+.service-grid a,
+.calendar-list article,
+.project-grid article,
+.tourism-grid article { border-radius: 24px; }
+.service-grid a { background: white; border-top: 0; box-shadow: 0 0 0 1px rgba(32, 73, 58, 0.09), 0 8px 24px rgba(32, 73, 58, 0.04); padding: 1.6rem; }
+.service-grid a:nth-child(3n + 2) > span { background: #e4eef9; color: #315f8f; }
+.service-grid a:nth-child(3n) > span { background: #e2efe8; color: #24553b; }
+.service-search form,
+.contact form { border-radius: 24px; border-left: 0; background: rgba(255, 255, 255, 0.76); }
+input,
+textarea { border-radius: 16px; min-width: 0; }
+.placeholder { border-radius: 28px; }
+.project-grid .placeholder { border-radius: 24px 24px 0 0; }
+.institution { background: #203f35; gap: 16px; }
+.institution article { border-radius: 22px; border: 1px solid rgba(255, 255, 255, 0.12); }
+.online-card { border-radius: 28px; }
+.online-card::before { display: none; }
+.payments { background: #623346; }
+.booking { background: #245849; }
+.heritage-story { background: #233f37; }
+.culture-strip img { border-radius: 18px; }
+.tourism-grid h3 { color: white; }
+.footer { background: #172d27; border-radius: 40px 40px 0 0; }
+.modal { border-radius: 28px; background: rgba(255, 255, 255, 0.96); backdrop-filter: blur(24px); }
+.modal-shell { backdrop-filter: blur(8px); }
+h2 { font-size: 3rem; }
+.brand strong { font-size: 1.2rem; }
+.hero p:not(.eyebrow) { font-size: 1.15rem; }
+@media (max-width: 1000px) {
+  .hero h1 { font-size: 4rem; }
+  h2 { font-size: 2.5rem; }
+}
+@media (max-width: 600px) {
+  .hero { min-height: 820px; border-radius: 0 0 32px 32px; }
+  .hero h1 { font-size: 3rem; }
+  .hero-content { padding-bottom: 64px; }
+  .hero p:not(.eyebrow) { font-size: 1rem; }
+  .hero-shade { background: rgba(13, 32, 27, 0.55); }
+  .brand strong { font-size: 0.9rem; }
+  h2 { font-size: 2rem; }
+  .quick-actions { margin-top: -24px; border-radius: 24px; }
+  .quick-actions a { min-height: 80px; }
+  .utility-bar,
+  .main-nav { margin-inline: auto; }
+  .section-shell { width: calc(100% - 32px); }
+}
+@media (prefers-reduced-transparency: reduce) {
+  .button.light,
+  .download-list button { background: white; }
+  .button.ghost { background: #243e35; }
+  .quick-actions,
+  .site-header.scrolled { background: #f4f7f6; }
 }
 
 @media (prefers-reduced-motion: reduce) {
