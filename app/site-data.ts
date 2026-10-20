@@ -67,20 +67,20 @@ export const services: Service[] = [
     slug: 'complaints-and-requests',
     title: 'Complaints and Requests',
     summary: 'A public pathway for civic issues, follow-up requests, and service feedback.',
-    status: 'Prototype form',
+    status: 'Online requests',
     details: [
-      'The prototype does not submit or store personal information.',
-      'A production version should include reference numbers, privacy text, and acknowledgement messaging.',
+      'Submit an issue or service request through the complaints form. Your message is saved for council staff.',
+      'Keep your reference number and private access code to read replies and follow the request status.',
     ],
   },
   {
     slug: 'download-forms',
     title: 'Download Forms',
     summary: 'Application form categories and document templates for public use.',
-    status: 'PDFs pending',
+    status: 'Document library',
     details: [
-      'The source document identifies the form categories, but final PDF assets were not supplied.',
-      'Download buttons remain informational until approved files are attached.',
+      'Published PDFs are available in the searchable document library.',
+      'Council administrators maintain the available forms, reports and publications.',
     ],
   },
 ];

@@ -1,4 +1,4 @@
-import { LanguageSwitcher, Text } from '@/components/language-provider';
+import { Text } from '@/components/language-provider';
 import Link from 'next/link';
 import type { ReactNode } from 'react';
 
@@ -20,8 +20,8 @@ export function SubpageShell({ children }: { children: ReactNode }) {
           <Link href="/downloads"><Text>{"Downloads"}</Text></Link>
           <Link href="/tourism"><Text>{"Tourism"}</Text></Link>
           <Link href="/contact"><Text>{"Contact"}</Text></Link>
+          <Link href="/track">Track a request</Link>
         </nav>
-        <LanguageSwitcher />
       </header>
       {children}
     </main>

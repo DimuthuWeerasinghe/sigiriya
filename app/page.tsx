@@ -6,7 +6,8 @@ import Link from 'next/link';
 import { useEffect, useMemo, useRef, useState, type CSSProperties, type ReactNode } from 'react';
 import { CoverflowCarousel, type CoverflowSlide } from '@/components/ui/coverflow-carousel';
 import assetManifest from '../content/assets.json';
-import { LanguageSwitcher, Text, useLanguage } from '@/components/language-provider';
+import { Text, useLanguage } from '@/components/language-provider';
+import { PublicDocuments } from '@/components/public/workspace';
 
 const navItems = [
   ['Home', '#home'],
@@ -33,10 +34,18 @@ const quickActions = [
   ['Trade Licences', '#services'],
   ['Download Forms', '#downloads'],
   ['Submit a Request', '/complaints'],
-  ['Track Application', '#online'],
+  ['Track Application', '/track'],
 ];
 
 const priorityServices = [
+  {
+    title: 'Download Forms',
+    category: 'Forms',
+    summary: 'Search published application forms and council documents.',
+    meta: 'Download published PDFs',
+    status: 'Available',
+    href: '/downloads',
+  },
   {
     title: 'Rates and Taxes',
     category: 'Rates & Taxes',
@@ -65,8 +74,8 @@ const priorityServices = [
     title: 'Complaints and Requests',
     category: 'Public Requests',
     summary: 'Submit a civic issue or service request for follow-up.',
-    meta: 'Prototype: no data is submitted',
-    status: 'Prototype only',
+    meta: 'Submit a request and follow up using private tracking details',
+    status: 'Online requests',
     href: '/complaints',
   },
   {
@@ -154,14 +163,6 @@ const destinations = [
   },
 ];
 
-const downloads = [
-  ['Assessment and rates application', 'Application Forms', 'Official file pending', 'Year pending', 'Sinhala / Tamil / English'],
-  ['Trade licence application', 'Application Forms', 'Official file pending', 'Year pending', 'Sinhala'],
-  ['Building application checklist', 'Application Forms', 'Official file pending', 'Year pending', 'English'],
-  ['Citizen Charter', 'Citizen Charter', 'Official file pending', 'Year pending', 'Trilingual'],
-  ['Strategic Plan', 'Strategic Plan', 'Official file pending', 'Year pending', 'Language pending'],
-];
-
 const galleryImages = [
   ['Community', 'Council activity', '/assets/documents/news-image1.jpeg'],
   ['Community', 'School and awareness programme', '/assets/documents/news-image2.jpeg'],
@@ -174,7 +175,6 @@ const galleryImages = [
 ];
 
 const serviceCategories = ['Most Used', 'Licences', 'Construction', 'Certificates', 'Rates & Taxes', 'Public Requests', 'Forms'];
-const documentCategories = ['All', 'Application Forms', 'Council Reports', 'Budget Reports', 'Publications', 'Citizen Charter', 'Gazette', 'Strategic Plan'];
 const serviceSteps = ['Find service', 'Check requirements', 'Download or prepare form', 'Submit', 'Track or follow up'];
 
 const heroDockItems = [
@@ -497,8 +497,6 @@ export default function Home() {
   const [lightbox, setLightbox] = useState<number | null>(null);
   const [serviceQuery, setServiceQuery] = useState('');
   const [serviceCategory, setServiceCategory] = useState('Most Used');
-  const [documentQuery, setDocumentQuery] = useState('');
-  const [documentCategory, setDocumentCategory] = useState('All');
   const [galleryCategory, setGalleryCategory] = useState('All');
   const headerRef = useRef<HTMLElement>(null);
   const heroRef = useRef<HTMLElement>(null);
@@ -517,12 +515,6 @@ export default function Home() {
     const searchable = [service.title, service.summary, service.category].flatMap((value) => [value, t(value)]).join(' ').toLocaleLowerCase(language);
     return searchable.includes(serviceQuery.trim().toLocaleLowerCase(language));
   }).slice(0, 5);
-
-  const filteredDocuments = downloads.filter(([name, category, status, year, language]) => {
-    const matchesCategory = documentCategory === 'All' || category === documentCategory;
-    const searchable = [name, category, status, year, language].flatMap((value) => [value, t(value)]).join(' ').toLowerCase();
-    return matchesCategory && searchable.includes(documentQuery.trim().toLowerCase());
-  });
 
   const galleryCategories = ['All', ...Array.from(new Set(galleryImages.map(([category]) => category)))];
   const filteredGallery = useMemo(() => galleryImages.filter(([category]) => galleryCategory === 'All' || category === galleryCategory), [galleryCategory]);
@@ -636,7 +628,6 @@ export default function Home() {
             <span className="seal" aria-hidden="true">DPS</span>
             <strong><Text>{"Dambulla Pradeshiya Sabha"}</Text></strong>
           </a>
-          <LanguageSwitcher />
           <div className="nav-links">
             {[...navItems, ...exploreItems, ...trailingNavItems].map(([label, href]) => (
               <a key={label} href={href}><Text>{label}</Text></a>
@@ -736,7 +727,7 @@ export default function Home() {
           <div className="service-directory">
             <h3><Text>{"Support"}</Text></h3>
             {serviceDirectory.map((item) => (
-              <Link key={item} href="/services">
+              <Link key={item} href={item === 'Download Application Forms' ? '/downloads' : item === 'Track Your Application' ? '/track' : '/contact'}>
                 <Text>{item}</Text>
                 <span><Text>{"View"}</Text></span>
               </Link>
@@ -900,29 +891,7 @@ export default function Home() {
           <div>
             <h2><Text>{"Documents, Forms & Publications"}</Text></h2>
           </div>
-          <form onSubmit={(event) => event.preventDefault()} role="search">
-            <input type="search" value={documentQuery} onChange={(event) => setDocumentQuery(event.target.value)} placeholder={t('Search forms and documents')} aria-label={t('Search forms and documents')} />
-            <button className="button light" type="submit"><Text>{"Search"}</Text></button>
-          </form>
-          <div className="filter-row">
-            {documentCategories.map((item) => (
-              <button key={item} type="button" className={documentCategory === item ? 'active' : ''} onClick={() => setDocumentCategory(item)}>
-                <Text>{item}</Text>
-              </button>
-            ))}
-          </div>
-          <div className="document-table" role="table" aria-label={t('Downloads')}>
-            {filteredDocuments.map(([name, category, status, year, language]) => (
-              <div role="row" key={name}>
-                <strong><Text>{name}</Text></strong>
-                <span><Text>{category}</Text></span>
-                <span><Text>{year}</Text></span>
-                <span><Text>{language}</Text></span>
-                <span>PDF</span>
-                <button type="button" disabled><Text>{status === 'Official file pending' ? 'Pending' : status}</Text></button>
-              </div>
-            ))}
-          </div>
+          <PublicDocuments />
         </div>
       </section>
 
@@ -1013,12 +982,6 @@ export default function Home() {
             <Link href="/privacy"><Text>{"Privacy"}</Text></Link>
             <Link href="/sitemap"><Text>{"Sitemap"}</Text></Link>
           </nav>
-          <div className="footer-contact">
-            <h3><Text>{"Contact"}</Text></h3>
-            <p><Text>{"Dambulla Pradeshiya Sabha, Dambulla"}</Text></p>
-            <p><Text>{"Telephone and email pending final verification."}</Text></p>
-            <LanguageSwitcher />
-          </div>
         </div>
       </footer>
 

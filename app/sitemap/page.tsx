@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { services, tourismPlaces } from '../site-data';
 import { SubpageHero, SubpageShell } from '../shared';
 
-const baseLinks = ['/about', '/services', '/news', '/downloads', '/tourism', '/gallery', '/contact', '/complaints', '/privacy', '/accessibility'];
+const baseLinks = ['/about', '/services', '/news', '/downloads', '/tourism', '/gallery', '/contact', '/complaints', '/track', '/privacy', '/accessibility'];
 
 export default function SitemapPage() {
   return (

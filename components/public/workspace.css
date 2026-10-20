@@ -1,0 +1,66 @@
+.public-workspace { color: var(--ink); }
+.public-workspace input, .public-workspace textarea, .public-workspace select { width: 100%; min-height: 47px; border: 1px solid #ded8d1; border-radius: 10px; padding: 12px 14px; background: white; color: #34302c; font: inherit; font-size: 14px; }
+.public-workspace textarea { resize: vertical; min-height: 130px; line-height: 1.65; }
+.public-workspace label { display: grid; gap: 8px; color: #5f5449; font-size: 13px; font-weight: 650; }
+.public-workspace label > span { font-weight: 400; color: #9c9289; }
+.public-workspace .button { display: inline-flex; align-items: center; justify-content: center; gap: 8px; font-size: 13px; }
+.public-workspace .button:disabled { opacity: 0.55; cursor: wait; }
+.public-workspace input[aria-invalid='true'], .public-workspace textarea[aria-invalid='true'] { border-color: #c55442; }
+.public-message-form, .public-confirmation { padding: clamp(24px, 4vw, 40px); background: #fffcf7; border: 1px solid #eee2d4; border-radius: 20px; }
+.public-message-form { display: grid; gap: 22px; width: 100%; }
+.public-form-heading { display: flex; align-items: flex-start; gap: 12px; }
+.public-form-heading > svg { color: var(--terracotta); margin-top: 5px; flex-shrink: 0; }
+.public-form-heading h2 { margin: 0 0 5px; font-size: 24px; letter-spacing: -0.03em; }
+.public-form-heading p { margin: 0; color: #978e85; font-size: 12px; }
+.public-form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px 18px; }
+.public-field-error { color: #b04534; font-size: 12px; font-weight: 450; }
+.public-form-error, .public-form-success { margin: 0; padding: 14px 17px; border-radius: 10px; font-size: 13px; line-height: 1.6; }
+.public-form-error { color: #a44031; border: 1px solid #f0cfc7; background: #fff0eb; }
+.public-form-success { color: #39754b; border: 1px solid #cce5d3; background: #f0f8f2; }
+.public-workspace .public-small { display: flex; align-items: flex-start; flex-wrap: wrap; gap: 5px; margin: 0; font-size: 12px; font-weight: 400; line-height: 1.8; color: #8d8174; }
+.public-small a, .public-existing-link { text-decoration: underline; text-underline-offset: 3px; color: #ad5e3b; }
+.public-existing-link { font-size: 12px; text-align: center; }
+.public-confirmation > svg { color: #668b62; }
+.public-confirmation h2 { font-size: 28px; line-height: 1.3; margin: 16px 0; }
+.public-confirmation > p { color: #8c8073; font-size: 14px; line-height: 1.8; }
+.public-confirmation dl { padding: 20px; border: 1px solid #e8d9c6; border-radius: 12px; margin-block: 24px; background: white; }
+.public-confirmation dt { color: #a28b71; font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; }
+.public-confirmation dd { margin: 7px 0 19px; word-break: break-word; }
+.public-confirmation dd:last-child { margin-bottom: 0; }
+.public-confirmation code { font-size: 12px; color: #6b5c4c; }
+.public-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+.public-tracker { display: grid; gap: 24px; }
+.public-tracking-form { display: grid; grid-template-columns: 1fr 1.5fr auto; align-items: start; gap: 16px; background: #fffcf7; border: 1px solid #eee2d4; border-radius: 15px; padding: 24px; }
+.public-tracking-form > button { margin-top: 27px; }
+.public-thread { border: 1px solid #e8dfd3; border-radius: 18px; padding: clamp(20px, 4vw, 36px); }
+.public-thread > header { display: flex; align-items: flex-start; justify-content: space-between; gap: 15px; margin-bottom: 25px; }
+.public-thread > header h2 { font-size: 25px; margin: 7px 0 0; }
+.public-thread > header small { color: #ab9173; font-size: 11px; letter-spacing: 0.06em; }
+.public-status { display: inline-block; text-transform: capitalize; white-space: nowrap; border-radius: 20px; padding: 7px 12px; background: #f5ede1; color: #98794f; font-size: 11px; }
+.public-thread-messages { display: grid; gap: 16px; margin-bottom: 25px; }
+.public-message { max-width: 90%; border-radius: 12px; padding: 17px 20px; background: #f7f5f1; border: 1px solid #eee9e1; }
+.public-message.admin { background: #fcf0e6; border-color: #f1dec9; margin-left: auto; }
+.public-message > div { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; font-size: 11px; }
+.public-message strong { color: #8b6947; }
+.public-message time { color: #a39b90; font-size: 10px; }
+.public-message > p { margin: 12px 0 0; font-size: 14px; line-height: 1.8; white-space: pre-wrap; overflow-wrap: anywhere; }
+.public-reply-form { display: grid; gap: 15px; padding-top: 22px; border-top: 1px solid #ede5d9; }
+.public-reply-form .button { justify-self: end; }
+.public-document-library { grid-column: 1 / -1; width: 100%; }
+.public-document-filters { display: flex; align-items: flex-end; flex-wrap: wrap; gap: 14px; margin-bottom: 24px; }
+.public-document-filters > label:first-child { flex: 1; min-width: 200px; }
+.public-document-filters > label:nth-child(2) { min-width: 200px; }
+.public-document-filters > label > span { font-size: 12px; color: #8f7e6d; }
+.public-documents { display: grid; gap: 12px; }
+.public-document-card { display: flex; align-items: center; gap: 18px; padding: 22px; background: #fffdfa; border: 1px solid #ebdfcf; border-radius: 13px; }
+.public-pdf-icon { display: grid; place-items: center; align-content: center; gap: 4px; flex-shrink: 0; width: 48px; height: 56px; background: #fbebdd; color: #b57c4c; border-radius: 8px; font-size: 9px; font-weight: 700; }
+.public-document-card > div { flex: 1; min-width: 0; }
+.public-document-card h3 { font-size: 16px; margin: 0 0 6px; line-height: 1.5; }
+.public-document-card p { font-size: 12px; line-height: 1.7; color: #938574; margin: 0 0 8px; white-space: pre-wrap; overflow-wrap: anywhere; }
+.public-document-card small { color: #a49786; font-size: 11px; }
+.public-doc-empty { display: grid; justify-items: center; text-align: center; padding: 50px 20px; border: 1px dashed #e1d3c1; border-radius: 14px; color: #ae987b; }
+.public-doc-empty h3 { color: #88745b; font-size: 17px; margin-bottom: 6px; }
+.public-doc-empty p { font-size: 12px; color: #a69785; }
+.public-document-pagination { display: flex; align-items: center; justify-content: space-between; gap: 15px; margin-top: 20px; font-size: 12px; color: #a18a6f; }
+@media (max-width: 900px) { .public-tracking-form { grid-template-columns: 1fr 1fr; } .public-tracking-form > button { grid-column: 1 / -1; margin: 0; } }
+@media (max-width: 600px) { .public-form-grid, .public-tracking-form { grid-template-columns: 1fr; } .public-message { max-width: 100%; } .public-thread > header { flex-direction: column; } .public-document-card { flex-wrap: wrap; gap: 12px; padding: 17px; } .public-document-card > .button { width: 100%; } .public-document-card h3 { font-size: 14px; } .public-document-filters > label { width: 100%; } }

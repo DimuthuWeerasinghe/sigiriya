@@ -8,8 +8,11 @@
   "scripts": {
     "dev": "vinext dev",
     "build": "node scripts/optimize-assets.mjs && vinext build && node scripts/prune-dist-assets.mjs",
-    "start": "vinext start",
-    "lint": "eslint . --ignore-pattern dist --ignore-pattern .next"
+    "start": "node scripts/start-worker.mjs",
+    "lint": "eslint . --ignore-pattern dist --ignore-pattern .next",
+    "admin:setup": "node --experimental-strip-types scripts/setup-admin.mts",
+    "test:admin": "node --experimental-strip-types --test tests/admin-security.test.ts",
+    "test:workspace": "node --experimental-strip-types --test tests/workspace-security.test.ts"
   },
   "dependencies": {
     "lucide-react": "^1.42.0",

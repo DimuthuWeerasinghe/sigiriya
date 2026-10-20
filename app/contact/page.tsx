@@ -1,5 +1,5 @@
 import { Text } from '@/components/language-provider';
-import { TranslatedTextarea } from '@/components/language-provider';
+import { SubmissionForm } from '@/components/public/workspace';
 import { contactDetails } from '../site-data';
 import { SubpageHero, SubpageShell } from '../shared';
 
@@ -7,7 +7,7 @@ export default function ContactPage() {
   return (
     <SubpageShell>
       <SubpageHero eyebrow="Contact" title="Council Contact and Assistance">
-        <p><Text>{"Use the contact details after final confirmation, or route enquiries through the council office."}</Text></p>
+        <p><Text>{"Send an enquiry to the council. Keep your private tracking details to view replies and follow up."}</Text></p>
       </SubpageHero>
       <section className="section-shell contact route-contact">
         <div>
@@ -18,11 +18,7 @@ export default function ContactPage() {
             </article>
           ))}
         </div>
-        <form>
-          <label><Text>{" Your message "}</Text><TranslatedTextarea placeholder="Presentation-only message area" />
-          </label>
-          <button className="button primary" type="button"><Text>{"Send enquiry"}</Text></button>
-        </form>
+        <SubmissionForm kind="enquiry" />
       </section>
     </SubpageShell>
   );

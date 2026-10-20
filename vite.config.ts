@@ -13,7 +13,8 @@ const { d1, r2 } = hostingConfig;
 const isCodexSeatbeltSandbox = process.env.CODEX_SANDBOX === 'seatbelt';
 
 const localBindingConfig = {
-  main: 'vinext/server/app-router-entry',
+  main: 'worker.ts',
+  compatibility_date: '2026-04-01',
   compatibility_flags: ['nodejs_compat'],
   d1_databases: d1
     ? [
@@ -21,6 +22,7 @@ const localBindingConfig = {
           binding: d1,
           database_name: 'site-creator-d1',
           database_id: SITE_CREATOR_PLACEHOLDER_DATABASE_ID,
+          migrations_dir: 'db/migrations',
         },
       ]
     : [],
@@ -40,6 +42,8 @@ export default defineConfig(async () => {
   process.env.WRANGLER_WRITE_LOGS ??= 'false';
   process.env.WRANGLER_LOG_PATH ??= '.wrangler/logs';
   process.env.MINIFLARE_REGISTRY_PATH ??= '.wrangler/registry';
+  process.env.CLOUDFLARE_CF_FETCH_ENABLED ??= 'false';
+  process.env.WRANGLER_SEND_METRICS ??= 'false';
 
   // Wrangler snapshots its log path while the Cloudflare plugin is imported.
   const { cloudflare } = await import('@cloudflare/vite-plugin');

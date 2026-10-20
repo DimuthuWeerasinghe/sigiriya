@@ -1970,7 +1970,7 @@ html.motion-ready .motion-section.is-visible :where(article, form, figure, .filt
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: 1.5fr repeat(5, minmax(120px, 1fr));
+  grid-template-columns: 1.5fr repeat(4, minmax(120px, 1fr));
   gap: clamp(20px, 3vw, 42px);
   border-top: 1px solid var(--gold-line);
   padding-top: 2rem;
@@ -4477,7 +4477,7 @@ section[id] {
   }
 }
 
-/* Direct section navigation and persistent language controls. */
+/* Direct section navigation. */
 .site-header,
 .site-header.scrolled,
 .site-header:focus-within {
@@ -4486,8 +4486,8 @@ section[id] {
 
 .site-header .main-nav {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  grid-template-areas: 'brand languages' 'links links';
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas: 'brand' 'links';
   gap: 10px 16px;
   padding: 12px 20px;
 }
