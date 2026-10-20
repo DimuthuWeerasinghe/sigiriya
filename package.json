@@ -7,11 +7,12 @@
   },
   "scripts": {
     "dev": "vinext dev",
-    "build": "vinext build",
+    "build": "node scripts/optimize-assets.mjs && vinext build && node scripts/prune-dist-assets.mjs",
     "start": "vinext start",
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next"
   },
   "dependencies": {
+    "lucide-react": "^1.42.0",
     "next": "16.2.6",
     "react": "19.2.6",
     "react-dom": "19.2.6"

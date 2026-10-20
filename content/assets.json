@@ -1,0 +1,416 @@
+{
+  "dambulla-hero.png": {
+    "width": 1672,
+    "height": 941,
+    "variants": [
+      {
+        "src": "/assets/optimized/dambulla-hero-360.webp",
+        "width": 360
+      },
+      {
+        "src": "/assets/optimized/dambulla-hero-720.webp",
+        "width": 720
+      },
+      {
+        "src": "/assets/optimized/dambulla-hero-1200.webp",
+        "width": 1200
+      },
+      {
+        "src": "/assets/optimized/dambulla-hero-1600.webp",
+        "width": 1600
+      }
+    ]
+  },
+  "heritage-water-garden.png": {
+    "width": 1654,
+    "height": 951,
+    "variants": [
+      {
+        "src": "/assets/optimized/heritage-water-garden-360.webp",
+        "width": 360
+      },
+      {
+        "src": "/assets/optimized/heritage-water-garden-720.webp",
+        "width": 720
+      },
+      {
+        "src": "/assets/optimized/heritage-water-garden-1200.webp",
+        "width": 1200
+      },
+      {
+        "src": "/assets/optimized/heritage-water-garden-1600.webp",
+        "width": 1600
+      }
+    ]
+  },
+  "hero-visitor-sigiriya.png": {
+    "width": 10630,
+    "height": 9780,
+    "variants": [
+      {
+        "src": "/assets/optimized/hero-visitor-sigiriya-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/assets/optimized/hero-visitor-sigiriya-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/assets/optimized/hero-visitor-sigiriya-1440.webp",
+        "width": 1440
+      },
+      {
+        "src": "/assets/optimized/hero-visitor-sigiriya-1920.webp",
+        "width": 1920
+      }
+    ]
+  },
+  "nature-elephants.png": {
+    "width": 1538,
+    "height": 1023,
+    "variants": [
+      {
+        "src": "/assets/optimized/nature-elephants-360.webp",
+        "width": 360
+      },
+      {
+        "src": "/assets/optimized/nature-elephants-720.webp",
+        "width": 720
+      },
+      {
+        "src": "/assets/optimized/nature-elephants-1200.webp",
+        "width": 1200
+      }
+    ]
+  },
+  "rock-fortress-close.png": {
+    "width": 1494,
+    "height": 1052,
+    "variants": [
+      {
+        "src": "/assets/optimized/rock-fortress-close-360.webp",
+        "width": 360
+      },
+      {
+        "src": "/assets/optimized/rock-fortress-close-720.webp",
+        "width": 720
+      },
+      {
+        "src": "/assets/optimized/rock-fortress-close-1200.webp",
+        "width": 1200
+      }
+    ]
+  },
+  "documents/gallery-image1.jpeg": {
+    "width": 728,
+    "height": 486,
+    "variants": [
+      {
+        "src": "/assets/optimized/doc-gallery-image1-360.webp",
+        "width": 360
+      },
+      {
+        "src": "/assets/optimized/doc-gallery-image1-720.webp",
+        "width": 720
+      }
+    ]
+  },
+  "documents/gallery-image2.jpeg": {
+    "width": 1280,
+    "height": 590,
+    "variants": [
+      {
+        "src": "/assets/optimized/doc-gallery-image2-360.webp",
+        "width": 360
+      },
+      {
+        "src": "/assets/optimized/doc-gallery-image2-720.webp",
+        "width": 720
+      },
+      {
+        "src": "/assets/optimized/doc-gallery-image2-1200.webp",
+        "width": 1200
+      }
+    ]
+  },
+  "documents/home-image1.jpeg": {
+    "width": 213,
+    "height": 179,
+    "variants": [
+      {
+        "src": "/assets/optimized/doc-home-image1-360.webp",
+        "width": 213
+      }
+    ]
+  },
+  "documents/home-image20.jpeg": {
+    "width": 2033,
+    "height": 2710,
+    "variants": [
+      {
+        "src": "/assets/optimized/doc-home-image20-360.webp",
+        "width": 360
+      },
+      {
+        "src": "/assets/optimized/doc-home-image20-720.webp",
+        "width": 720
+      },
+      {
+        "src": "/assets/optimized/doc-home-image20-1200.webp",
+        "width": 1200
+      },
+      {
+        "src": "/assets/optimized/doc-home-image20-1600.webp",
+        "width": 1600
+      }
+    ]
+  },
+  "documents/news-image1.jpeg": {
+    "width": 490,
+    "height": 653,
+    "variants": [
+      {
+        "src": "/assets/optimized/doc-news-image1-360.webp",
+        "width": 360
+      }
+    ]
+  },
+  "documents/news-image2.jpeg": {
+    "width": 449,
+    "height": 599,
+    "variants": [
+      {
+        "src": "/assets/optimized/doc-news-image2-360.webp",
+        "width": 360
+      }
+    ]
+  },
+  "documents/news-image3.jpeg": {
+    "width": 1003,
+    "height": 450,
+    "variants": [
+      {
+        "src": "/assets/optimized/doc-news-image3-360.webp",
+        "width": 360
+      },
+      {
+        "src": "/assets/optimized/doc-news-image3-720.webp",
+        "width": 720
+      }
+    ]
+  },
+  "documents/news-image4.jpeg": {
+    "width": 1280,
+    "height": 590,
+    "variants": [
+      {
+        "src": "/assets/optimized/doc-news-image4-360.webp",
+        "width": 360
+      },
+      {
+        "src": "/assets/optimized/doc-news-image4-720.webp",
+        "width": 720
+      },
+      {
+        "src": "/assets/optimized/doc-news-image4-1200.webp",
+        "width": 1200
+      }
+    ]
+  },
+  "dambulla/A1.png": {
+    "width": 1448,
+    "height": 1086,
+    "variants": [
+      {
+        "src": "/assets/optimized/dambulla-a1-360.webp",
+        "width": 360
+      },
+      {
+        "src": "/assets/optimized/dambulla-a1-720.webp",
+        "width": 720
+      },
+      {
+        "src": "/assets/optimized/dambulla-a1-1200.webp",
+        "width": 1200
+      }
+    ]
+  },
+  "dambulla/A2.png": {
+    "width": 1448,
+    "height": 1086,
+    "variants": [
+      {
+        "src": "/assets/optimized/dambulla-a2-360.webp",
+        "width": 360
+      },
+      {
+        "src": "/assets/optimized/dambulla-a2-720.webp",
+        "width": 720
+      },
+      {
+        "src": "/assets/optimized/dambulla-a2-1200.webp",
+        "width": 1200
+      }
+    ]
+  },
+  "dambulla/A4.png": {
+    "width": 1454,
+    "height": 1082,
+    "variants": [
+      {
+        "src": "/assets/optimized/dambulla-a4-360.webp",
+        "width": 360
+      },
+      {
+        "src": "/assets/optimized/dambulla-a4-720.webp",
+        "width": 720
+      },
+      {
+        "src": "/assets/optimized/dambulla-a4-1200.webp",
+        "width": 1200
+      }
+    ]
+  },
+  "dambulla/ChatGPT Image Sep 7, 2026, 10_34_10 PM.png": {
+    "width": 1654,
+    "height": 951,
+    "variants": [
+      {
+        "src": "/assets/optimized/dambulla-chatgpt-image-sep-7-2026-10_34_10-pm-360.webp",
+        "width": 360
+      },
+      {
+        "src": "/assets/optimized/dambulla-chatgpt-image-sep-7-2026-10_34_10-pm-720.webp",
+        "width": 720
+      },
+      {
+        "src": "/assets/optimized/dambulla-chatgpt-image-sep-7-2026-10_34_10-pm-1200.webp",
+        "width": 1200
+      },
+      {
+        "src": "/assets/optimized/dambulla-chatgpt-image-sep-7-2026-10_34_10-pm-1600.webp",
+        "width": 1600
+      }
+    ]
+  },
+  "dambulla/ChatGPT Image Sep 7, 2026, 10_47_00 PM.png": {
+    "width": 1832,
+    "height": 859,
+    "variants": [
+      {
+        "src": "/assets/optimized/dambulla-chatgpt-image-sep-7-2026-10_47_00-pm-360.webp",
+        "width": 360
+      },
+      {
+        "src": "/assets/optimized/dambulla-chatgpt-image-sep-7-2026-10_47_00-pm-720.webp",
+        "width": 720
+      },
+      {
+        "src": "/assets/optimized/dambulla-chatgpt-image-sep-7-2026-10_47_00-pm-1200.webp",
+        "width": 1200
+      },
+      {
+        "src": "/assets/optimized/dambulla-chatgpt-image-sep-7-2026-10_47_00-pm-1600.webp",
+        "width": 1600
+      }
+    ]
+  },
+  "dambulla/ChatGPT Image Sep 7, 2026, 11_55_39 PM.png": {
+    "width": 1672,
+    "height": 941,
+    "variants": [
+      {
+        "src": "/assets/optimized/dambulla-chatgpt-image-sep-7-2026-11_55_39-pm-360.webp",
+        "width": 360
+      },
+      {
+        "src": "/assets/optimized/dambulla-chatgpt-image-sep-7-2026-11_55_39-pm-720.webp",
+        "width": 720
+      },
+      {
+        "src": "/assets/optimized/dambulla-chatgpt-image-sep-7-2026-11_55_39-pm-1200.webp",
+        "width": 1200
+      },
+      {
+        "src": "/assets/optimized/dambulla-chatgpt-image-sep-7-2026-11_55_39-pm-1600.webp",
+        "width": 1600
+      }
+    ]
+  },
+  "dambulla/ChatGPT Image Sep 7, 2026, 11_57_21 PM.png": {
+    "width": 1672,
+    "height": 941,
+    "variants": [
+      {
+        "src": "/assets/optimized/dambulla-chatgpt-image-sep-7-2026-11_57_21-pm-360.webp",
+        "width": 360
+      },
+      {
+        "src": "/assets/optimized/dambulla-chatgpt-image-sep-7-2026-11_57_21-pm-720.webp",
+        "width": 720
+      },
+      {
+        "src": "/assets/optimized/dambulla-chatgpt-image-sep-7-2026-11_57_21-pm-1200.webp",
+        "width": 1200
+      },
+      {
+        "src": "/assets/optimized/dambulla-chatgpt-image-sep-7-2026-11_57_21-pm-1600.webp",
+        "width": 1600
+      }
+    ]
+  },
+  "dambulla/ChatGPT Image Sep 8, 2026, 10_05_45 AM.png": {
+    "width": 1024,
+    "height": 1536,
+    "variants": [
+      {
+        "src": "/assets/optimized/dambulla-chatgpt-image-sep-8-2026-10_05_45-am-360.webp",
+        "width": 360
+      },
+      {
+        "src": "/assets/optimized/dambulla-chatgpt-image-sep-8-2026-10_05_45-am-720.webp",
+        "width": 720
+      }
+    ]
+  },
+  "dambulla/ChatGPT Image Sep 8, 2026, 10_09_00 AM.png": {
+    "width": 1254,
+    "height": 1254,
+    "variants": [
+      {
+        "src": "/assets/optimized/dambulla-chatgpt-image-sep-8-2026-10_09_00-am-360.webp",
+        "width": 360
+      },
+      {
+        "src": "/assets/optimized/dambulla-chatgpt-image-sep-8-2026-10_09_00-am-720.webp",
+        "width": 720
+      },
+      {
+        "src": "/assets/optimized/dambulla-chatgpt-image-sep-8-2026-10_09_00-am-1200.webp",
+        "width": 1200
+      }
+    ]
+  },
+  "dambulla/ChatGPT Image Sep 8, 2026, 12_08_11 PM.png": {
+    "width": 2171,
+    "height": 481,
+    "variants": [
+      {
+        "src": "/assets/optimized/dambulla-chatgpt-image-sep-8-2026-12_08_11-pm-360.webp",
+        "width": 360
+      },
+      {
+        "src": "/assets/optimized/dambulla-chatgpt-image-sep-8-2026-12_08_11-pm-720.webp",
+        "width": 720
+      },
+      {
+        "src": "/assets/optimized/dambulla-chatgpt-image-sep-8-2026-12_08_11-pm-1200.webp",
+        "width": 1200
+      },
+      {
+        "src": "/assets/optimized/dambulla-chatgpt-image-sep-8-2026-12_08_11-pm-1600.webp",
+        "width": 1600
+      }
+    ]
+  }
+}
