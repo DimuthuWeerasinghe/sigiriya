@@ -1,4 +1,4 @@
-import { Text } from '@/components/language-provider';
+import { LanguageSwitcher, Text } from '@/components/language-provider';
 import Link from 'next/link';
 import type { ReactNode } from 'react';
 
@@ -13,6 +13,7 @@ export function SubpageShell({ children }: { children: ReactNode }) {
             <small><Text>{"Official Prototype"}</Text></small>
           </span>
         </Link>
+        <LanguageSwitcher/>
         <nav aria-label="Section navigation">
           <Link href="/about"><Text>{"About"}</Text></Link>
           <Link href="/services"><Text>{"Services"}</Text></Link>

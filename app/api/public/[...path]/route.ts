@@ -1,3 +1,4 @@
+import { serveWebsiteImage } from '@/lib/site/server';
 import { checkRequestOrigin } from '@/lib/admin/security';
 import { HttpError, json } from '@/lib/http';
 import { createConversation, downloadDocument, listDocuments, trackConversation } from '@/lib/workspace/server';
@@ -15,6 +16,8 @@ async function handle(request: Request) {
       if (path === 'reply') return await trackConversation(request, true);
     }
     if (request.method === 'GET' && path === 'documents') return json(await listDocuments(new URL(request.url).searchParams, true));
+    const image = /^site-media\/([a-f0-9-]+)$/.exec(path);
+    if (request.method === 'GET' && image) return await serveWebsiteImage(image[1]);
     const match = /^documents\/([^/]+)\/download$/.exec(path);
     if (request.method === 'GET' && match) return await downloadDocument(request, match[1]);
     throw new HttpError(404, 'This service endpoint does not exist.');

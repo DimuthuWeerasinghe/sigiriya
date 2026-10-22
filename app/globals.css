@@ -4612,3 +4612,31 @@ html:lang(ta) .living-gateway h1 { font-size: clamp(2.3rem, 5vw, 4.6rem); line-h
   html:lang(si) .living-gateway h1,
   html:lang(ta) .living-gateway h1 { font-size: clamp(2rem, 8vw, 3rem); }
 }
+
+/* Language controls occupy the upper row of the navigation. */
+.site-header .main-nav { grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: 'brand languages' 'links links'; }
+.site-header .language-switcher { justify-self: end; align-self: center; }
+.subpage-header .language-switcher { margin-left: auto; }
+.subpage-header nav { flex-basis: 100%; justify-content: center; }
+.official-message-page { max-width: 980px; padding-top: 35px; padding-bottom: 100px; }
+.official-message-toolbar { display: flex; justify-content: flex-end; margin-bottom: 30px; }
+.official-message-toolbar .button { gap: 9px; font-size: 0.88rem; }
+.official-message-heading { text-align: center; margin: 0 auto 34px; }
+.official-message-heading h1 { margin: 0; color: var(--forest); font-size: clamp(2rem, 4.5vw, 3.8rem); line-height: 1.2; letter-spacing: -0.025em; }
+.official-message-photo { width: clamp(180px, 24vw, 245px); aspect-ratio: 1; overflow: hidden; border-radius: 50%; border: 1px solid #e7d7bd; background: #faf4e9; color: #b49e7b; display: grid; place-items: center; margin: 0 auto 30px; }
+.official-message-photo img { width: 100%; height: 100%; object-fit: cover; }
+.official-message-details { max-width: 680px; min-height: 115px; margin: 0 auto 28px; padding: 23px 28px; border: 1px solid #eee2d3; background: #fffcf7; border-radius: 18px; text-align: center; font-style: italic; white-space: pre-wrap; }
+.official-message-details p { margin: 3px 0; color: var(--forest); }
+.official-message-name { font-weight: 800; font-size: 1.22rem; }
+.official-message-body { min-height: 320px; padding: clamp(25px, 5vw, 58px); border: 1px solid #eee2d3; border-radius: 22px; background: white; }
+.official-message-body p { margin: 0; color: var(--ink); font-size: 1.08rem; line-height: 1.95; white-space: pre-wrap; }
+@media (max-width: 680px) {
+  .site-header .main-nav { column-gap: 5px; }
+  .site-header .brand strong { font-size: 0.72rem; line-height: 1.5; }
+  .site-header .language-switcher button { min-width: 30px; padding-inline: 5px; font-size: 0.68rem; }
+  .official-message-toolbar { margin-bottom: 25px; }
+  .official-message-details { padding: 20px; }
+}
+@media (max-width: 380px) {
+  .site-header .main-nav { grid-template-areas: 'languages languages' 'brand brand' 'links links'; }
+}

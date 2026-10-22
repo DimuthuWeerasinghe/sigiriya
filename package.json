@@ -12,7 +12,8 @@
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next",
     "admin:setup": "node --experimental-strip-types scripts/setup-admin.mts",
     "test:admin": "node --experimental-strip-types --test tests/admin-security.test.ts",
-    "test:workspace": "node --experimental-strip-types --test tests/workspace-security.test.ts"
+    "test:workspace": "node --experimental-strip-types --test tests/workspace-security.test.ts",
+    "test:site": "node --experimental-strip-types --test tests/site-content.test.ts"
   },
   "dependencies": {
     "lucide-react": "^1.42.0",

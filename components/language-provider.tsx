@@ -50,7 +50,19 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   return <LanguageContext.Provider value={value}>{children}</LanguageContext.Provider>;
 }
 
-export function useLanguage() { return useContext(LanguageContext); }
+const WebsiteTranslationContext = createContext<Record<string, [string, string]>>({});
+export function WebsiteTranslations({ translations, children }: { translations: Record<string, [string, string]>; children: ReactNode }) {
+  return <WebsiteTranslationContext.Provider value={translations}>{children}</WebsiteTranslationContext.Provider>;
+}
+export function useLanguage() {
+  const context = useContext(LanguageContext);
+  const overrides = useContext(WebsiteTranslationContext);
+  return useMemo(() => ({ ...context, t: (text: string) => {
+    if (context.language === 'en') return text;
+    const value = overrides[text]?.[context.language === 'si' ? 0 : 1];
+    return value || context.t(text);
+  }}), [context, overrides]);
+}
 
 export function Text({ children }: { children: string | null | undefined }) {
   const { t } = useLanguage();

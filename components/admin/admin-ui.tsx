@@ -18,6 +18,7 @@ const actionNames: Record<string, string> = {
   VISITOR_REPLIED: 'Visitor replied', DOCUMENT_UPLOADED: 'PDF uploaded', DOCUMENT_UPDATED: 'Document updated',
   DOCUMENT_PUBLISHED: 'Document published', DOCUMENT_ARCHIVED: 'Document archived', DOCUMENT_RESTORED: 'Document restored',
   DOCUMENT_DOWNLOADED: 'Download requested', DOCUMENTS_VIEWED: 'Document manager viewed',
+  WEBSITE_UPDATED: 'Website section updated', WEBSITE_IMAGE_UPLOADED: 'Website image uploaded',
 };
 function formatDate(value: string) { return new Intl.DateTimeFormat('en-GB', { dateStyle: 'medium', timeStyle: 'short', timeZone: 'Asia/Colombo' }).format(new Date(value)); }
 
@@ -107,6 +108,7 @@ export function AdminShell({ username, csrfToken, children }: { username: string
       <p className="admin-sidebar-label">WORKSPACE</p>
       <nav aria-label="Admin navigation">
         <Link href="/admin" prefetch={false} className={pathname === '/admin' ? 'active' : ''} aria-current={pathname === '/admin' ? 'page' : undefined}><LayoutDashboard size={18} />Overview</Link>
+        <Link href="/admin/website" prefetch={false} className={pathname.startsWith('/admin/website') ? 'active' : ''}><LayoutDashboard size={18} />Website sections</Link>
         <Link href="/admin/inbox" prefetch={false} className={pathname === '/admin/inbox' ? 'active' : ''} aria-current={pathname === '/admin/inbox' ? 'page' : undefined}><Activity size={18} />Enquiries & requests</Link>
         <Link href="/admin/documents" prefetch={false} className={pathname === '/admin/documents' ? 'active' : ''} aria-current={pathname === '/admin/documents' ? 'page' : undefined}><LayoutDashboard size={18} />Documents</Link>
         <Link href="/admin/activity" prefetch={false} className={pathname === '/admin/activity' ? 'active' : ''} aria-current={pathname === '/admin/activity' ? 'page' : undefined}><Activity size={18} />Activity log<LockKeyhole size={13} className="admin-nav-lock" /></Link>
@@ -119,7 +121,7 @@ export function AdminShell({ username, csrfToken, children }: { username: string
       </div>
     </aside>
     <div className="admin-main">
-      <header className="admin-topbar"><span>Administration <span className="admin-breadcrumb">/ {pathname === '/admin/activity' ? 'Activity log' : pathname === '/admin/inbox' ? 'Enquiries & requests' : pathname === '/admin/documents' ? 'Documents' : 'Overview'}</span></span><span className="admin-secure-status"><span />Secure session</span></header>
+      <header className="admin-topbar"><span>Administration <span className="admin-breadcrumb">/ {pathname.startsWith('/admin/website') ? 'Website sections' : pathname === '/admin/activity' ? 'Activity log' : pathname === '/admin/inbox' ? 'Enquiries & requests' : pathname === '/admin/documents' ? 'Documents' : 'Overview'}</span></span><span className="admin-secure-status"><span />Secure session</span></header>
       <div className="admin-content">{children}</div>
       <footer className="admin-workspace-footer"><span>Dambulla Pradeshiya Sabha</span><span><LockKeyhole size={12} /> Restricted administrator access</span></footer>
     </div>

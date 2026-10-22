@@ -3,6 +3,7 @@ import { checkRequestOrigin, digest, randomToken, safeEqual, sessionCookie, SESS
 import { parseAuditQuery, validateLogin } from '@/lib/admin/validation';
 import type { AdminIdentity } from '@/lib/admin/types';
 import { HttpError, json, readJson } from '@/lib/http';
+import { handleWebsiteAdmin } from '@/lib/site/server';
 import { handleWorkspaceAdmin } from '@/lib/workspace/server';
 
 export const dynamic = 'force-dynamic';
@@ -76,6 +77,8 @@ async function protectedRequest(request: Request, path: string, identity: AdminI
     await appendAudit({ ...auditActor, action: 'AUDIT_CHANGE_BLOCKED', outcome: 'blocked', summary: `Blocked a ${request.method} attempt against the read-only activity log.` });
     return json({ error: 'Activity records are permanent. Editing and deletion are not allowed, including for administrators.' }, 405, { Allow: 'GET' });
   }
+  const websiteResponse = await handleWebsiteAdmin(request, path, identity);
+  if (websiteResponse) return websiteResponse;
   const workspaceResponse = await handleWorkspaceAdmin(request, path, identity);
   if (workspaceResponse) return workspaceResponse;
   throw new HttpError(404, 'This admin endpoint does not exist.');
